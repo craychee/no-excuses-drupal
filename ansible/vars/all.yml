@@ -1,0 +1,28 @@
+---
+server:
+    install: '1'
+    packages: [git, vim, sendmail, drush ,unzip, zip, g++, libssl-dev, apache2-utils]
+    timezone: America/Chicago
+    locale: en_US.UTF-8
+vagrant_local:
+    install: '1'
+    vm: { base_box: trusty64, hostname: no-excuses, ip: 192.168.33.99, memory: '2048', sharedfolder: ./, enableWindows: '1', useVagrantCloud: '1', syncType: nfs }
+nginx:
+    install: '1'
+    docroot: /vagrant/www
+    servername: myApp.vb
+mariadb:
+    install: '1'
+    root_password: '123'
+    database: default
+    user: default
+    password: default
+    dump: ''
+php:
+    install: '1'
+    ppa: php5-5.6
+    packages: [php5-cli, php5-intl, php5-mcrypt, php5-curl, php5-gd, php5-mysql, php5-xdebug, php5-dev]
+xdebug:
+    install: '1'
+composer:
+    install: '1'

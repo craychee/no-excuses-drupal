@@ -1,0 +1,7 @@
+# Ignore Vagrant box
+.vagrant/
+
+# Exclude hidden OS files.
+.DS_Store
+._*
+Thumbs.db
