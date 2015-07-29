@@ -13,9 +13,10 @@ A repository for those who have run out of excuses and are ready to finally put 
 
 ------------------
 
-1. From inside the project root, run `vagrant up`
-2. You will be prompted for the administration password on your host machine. Obey.
-3. Visit `192.168.33.99` in your browser of choice.
+1. Read [this](http://craychee.io/blog/2015/05/20/no-excuse-config-management-drupal/) blog post for reference.
+2. From inside the project root, run `vagrant up`
+3. You will be prompted for the administration password on your host machine. Obey.
+4. Visit `192.168.33.99` in your browser of choice.
 
 ## How do I work on this?
 
