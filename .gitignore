@@ -1,5 +1,6 @@
 # Ignore Vagrant box
 .vagrant/
+settings.php
 
 # Exclude hidden OS files.
 .DS_Store
