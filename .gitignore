@@ -2,6 +2,11 @@
 .vagrant/
 settings.php
 
+# Ignore artifacts of Drupal build.
+bin
+vendor
+www
+
 # Exclude hidden OS files.
 .DS_Store
 ._*

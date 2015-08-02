@@ -1,0 +1,55 @@
+{
+    "name": "craychee/no-excuses",
+    "description": "The companion example repository for the No Excuses blog series on http://craychee.io.",
+    "type": "project",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Michelle Krejci",
+            "email": "michelle@craychee.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.drupal-composer.org/"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "pantheon-systems/drops-7",
+                "type": "drupal-core",
+                "version": "7.38",
+                "source": {
+                    "url": "https://github.com/pantheon-systems/drops-7.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "replace": {
+                    "drupal/drupal": "self.version",
+                    "drupal/field": "self.version",
+                    "drupal/file": "self.version",
+                    "drupal/system": "self.version",
+                    "drupal/path": "self.version"
+                }
+            }
+        }
+    ],
+    "require": {
+        "pantheon-systems/drops-7": "7.38",
+        "craychee/rootcanal": "dev-master",
+        "drupal/features": "~7.2"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "bin/rootcanal"
+        ],
+        "post-update-cmd": [
+            "bin/rootcanal"
+        ]
+    }
+}
