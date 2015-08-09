@@ -1,0 +1,22 @@
+machine:
+  php:
+    version: 5.6.2
+
+dependencies:
+  pre:
+    - cp $HOME/$CIRCLE_PROJECT_REPONAME/cnf/circle.conf /etc/apache2/sites-available/default
+    - sudo sed -e "s?%HOME%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
+    - sudo sed -e "s?%PROJECT_DIR%?www?g" --in-place /etc/apache2/sites-available/default
+    - echo "sendmail_path=/bin/true" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+    - sudo a2enmod rewrite
+    - sudo service apache2 restart
+    - cp cnf/circle.settings.php cnf/settings.php
+  override:
+    - composer install --prefer-dist
+  post:
+    - sudo chown -R $(whoami):www-data www
+    - build/install.sh
+
+test:
+  override:
+      - bin/behat
