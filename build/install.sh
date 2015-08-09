@@ -3,7 +3,7 @@
 set -e
 path=$(dirname "$0")
 base=$(cd $path/.. && pwd)
-drush="drush $drush_flags -y -r $base/www"
+drush="$base/bin/drush $drush_flags -y -r $base/www"
 
 chmod -R +w $base/www/sites/default
 chmod -R +w $base/cnf

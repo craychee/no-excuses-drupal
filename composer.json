@@ -40,6 +40,7 @@
         "pantheon-systems/drops-7": "7.38",
         "craychee/rootcanal": "dev-master",
         "drupal/features": "~7.2",
+	"drush/drush": "7.*",
         "drupal/drupal-extension": "~3.0"
     },
     "config": {
