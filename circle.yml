@@ -20,3 +20,14 @@ dependencies:
 test:
   override:
       - bin/behat
+
+deployment:
+  pantheon:
+    branch: master
+    commands:
+      - build/install.sh
+      - composer install --no-dev --no-scripts
+      - bin/deploy
+      - mysqldump -u ubuntu circle_test > pantheon.sql
+      - terminus drush sqlc < pantheon.sql --site=no-excuses --env=dev
+      - terminus site clear-caches --site=no-excuses --env=dev
