@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
+
 sudo curl https://github.com/pantheon-systems/cli/releases/download/0.5.5/terminus.phar -L -o /usr/local/bin/terminus && sudo chmod +x /usr/local/bin/terminus
 
-terminus auth login $PANTHEON_EMAIL --password=$PANTHEON_USER
+terminus auth login $PANTHEON_EMAIL --password=$PANTHEON_PASSWORD
 
 # Clone deployment repository.
 expect <<delim
@@ -9,7 +11,7 @@ expect <<delim
   eval spawn git clone $PANTHEON_CODE pantheon
   set prompt ":|#|\\\$"
   interact -o -nobuffer -re $prompt return
-  send "$PANTHEON_USER\r"
+  send "$PANTHEON_PASSWORD\r"
 expect eof
 delim
 
