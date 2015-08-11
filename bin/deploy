@@ -23,6 +23,7 @@ git="( $base/pantheon && git $git_flags)"
 
 # Build the deployment artifact.
 sudo rm $base/cnf/settings.php
+sudo rm -Rf $base/www/sites/default
 mv $base/cnf/pantheon.settings.php $base/cnf/settings.php
 $base/bin/rootcanal --prod
 
