@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-sudo curl https://github.com/pantheon-systems/cli/releases/download/0.5.5/terminus.phar -L -o /usr/local/bin/terminus && sudo chmod +x /usr/local/bin/terminus
+sudo curl https://github.com/pantheon-systems/cli/releases/download/0.6.1/terminus.phar -L -o /usr/local/bin/terminus && sudo chmod +x /usr/local/bin/terminus
 
 terminus auth login $PANTHEON_EMAIL --password=$PANTHEON_PASSWORD
 
