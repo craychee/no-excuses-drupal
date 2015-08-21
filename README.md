@@ -1,6 +1,8 @@
 # No-Excuses Modern Drupal Workflow
 A repository for those who have run out of excuses and are ready to finally put their system requirements in code. Welcome.
 
+[![Circle CI](https://circleci.com/gh/craychee/no-excuses-drupal.svg?style=svg)](https://circleci.com/gh/craychee/no-excuses-drupal)
+
 ##Requirements
 
 ------------
