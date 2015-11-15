@@ -1,7 +1,7 @@
 ---
 server:
     install: '1'
-    packages: [git, vim, sendmail, drush ,unzip, zip, g++, libssl-dev, apache2-utils]
+    packages: [git, vim, sendmail, g++, unzip, zip]
     timezone: America/Chicago
     locale: en_US.UTF-8
 vagrant_local:
