@@ -2,7 +2,16 @@
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer creates=/usr/local/bin/composer
 
 - name: Add Composer directory to path
-  shell: export PATH="$HOME/.composer/vendor/bin:$PATH"
+  lineinfile: dest=/home/vagrant/.bashrc line="export PATH=$HOME/.composer/vendor/bin:$PATH"
+
+- name: Change ownership of global composer directory.
+  file: owner=vagrant recurse=yes group=www-data path=/home/vagrant/.composer state=directory
 
 - name: Install Drush8 globally
-  shell: composer global require drush/drush:dev-master
+  shell: export COMPOSER_HOME=/home/vagrant/.composer &&
+    composer global require drush/drush:dev-master
+    creates=/home/vagrant/.composer/vendor/drush/drush/composer.json
+
+- name: Change ownership of global composer directory.
+  file: owner=vagrant recurse=yes group=www-data path=/home/vagrant/.composer state=directory
+
